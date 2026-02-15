@@ -13,7 +13,10 @@ export default function Navbar() {
   return (
     <nav className={`nav ${open ? 'open' : ''}`}>
       <div className="nav-inner">
+        <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+        <img src="/logo.png" alt="logo" className="nav-logo" />
         <div className="brand">Arghya</div>
+        </div>
 
         <div className="nav-links">
           {LINKS.map((l) => (

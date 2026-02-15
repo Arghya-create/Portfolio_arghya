@@ -59,6 +59,12 @@ body {
   justify-content: space-between;
   padding: 0.75rem 1rem;
 }
+.nav-logo{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
 .brand {
   color: white;
   font-weight: 700;
@@ -644,5 +650,23 @@ main {
   }
   .profile-card {
     order: 2;
+  }
+}
+
+/* Route transition: incoming screen slides in from right */
+.route-wrapper {
+  width: 100%;
+  height: 100%;
+  animation: route-slide-in 420ms cubic-bezier(.22,.9,.36,1) both;
+}
+
+@keyframes route-slide-in {
+  0% {
+    transform: translateX(18%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
   }
 }

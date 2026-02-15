@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
-import SKILLS from '../constants/skills'
+import React, { useEffect, useRef } from "react";
+import SKILLS from "../constants/skills";
 
 export default function Home() {
-  const sectionRef = useRef(null)
-  const firefliesRef = useRef(null)
+  const sectionRef = useRef(null);
+  const firefliesRef = useRef(null);
 
   const fireflies = useRef(
     Array.from({ length: 18 }).map(() => {
@@ -13,53 +13,50 @@ export default function Home() {
         dur: `${4 + Math.random() * 6}s`,
         delay: `${Math.random() * 5}s`,
         size: `${4 + Math.random() * 6}px`,
-      }
-    })
-  ).current
+      };
+    }),
+  ).current;
 
   useEffect(() => {
-    const target = sectionRef.current
-    const node = firefliesRef.current
-    if (!target || !node) return
+    const target = sectionRef.current;
+    const node = firefliesRef.current;
+    if (!target || !node) return;
 
     const obs = new IntersectionObserver(
       (entries) => {
-        const e = entries[0]
-        if (e.isIntersecting) node.classList.remove('fade-out')
-        else node.classList.add('fade-out')
+        const e = entries[0];
+        if (e.isIntersecting) node.classList.remove("fade-out");
+        else node.classList.add("fade-out");
       },
-      { threshold: 0.2 }
-    )
+      { threshold: 0.2 },
+    );
 
-    obs.observe(target)
-    return () => obs.disconnect()
-  }, [])
+    obs.observe(target);
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <div ref={sectionRef}>
       <div className="fireflies" ref={firefliesRef} aria-hidden>
-          {fireflies.map((f, i) => (
-            <span
-              key={i}
-              className="firefly"
-              style={{
-                left: f.left,
-                top: f.top,
-                width: f.size,
-                height: f.size,
-                animationDuration: f.dur,
-                animationDelay: f.delay,
-              }}
-            />
-          ))}
-        </div>
-      <section id="home" className="hero" >
-        
+        {fireflies.map((f, i) => (
+          <span
+            key={i}
+            className="firefly"
+            style={{
+              left: f.left,
+              top: f.top,
+              width: f.size,
+              height: f.size,
+              animationDuration: f.dur,
+              animationDelay: f.delay,
+            }}
+          />
+        ))}
+      </div>
+      <section id="home" className="hero">
         <div className="hero-inner">
           <h1 className="hero-title">Hi — Arghya Dasgupta Here</h1>
-          <p className="hero-sub">
-            Get to know more about me
-          </p>
+          <p className="hero-sub">Get to know more about me</p>
           <div className="hero-ctas">
             <a href="/projects" className="cta">
               See my work
@@ -83,25 +80,26 @@ export default function Home() {
             </h3>
 
             <p>
-              I have experience with Angular, React, JavaScript, CSS, Python, Node and modern tooling.
-              I love collaborating with designers and backend engineers to ship
-              products that people enjoy using.My core expertise lies in
-              front-end engineering, where I specialize in Angular and React to
-              build scalable, high-quality digital products. I hold a Master of
-              Technology in Software Engineering from BITS Pilani, and a Bachelor of Technology in Computer
+              I have experience with Angular, React, JavaScript, CSS, Python,
+              Node and modern tooling. I love collaborating with designers and
+              backend engineers to ship products that people enjoy using.My core
+              expertise lies in front-end engineering, where I specialize in
+              Angular and React to build scalable, high-quality digital
+              products. I hold a Master of Technology in Software Engineering
+              from BITS Pilani, and a Bachelor of Technology in Computer
               Science.
             </p>
 
             <p>
-              Beyond technical execution, I am a proven leader with hands-on
-              experience managing teams of approximately 10 developers,
-              overseeing task allocation, code reviews, and sprint delivery. I
-              bridge the gap between design and development by collaborating
-              directly with clients and UX teams to translate Figma designs into
-              pixel-perfect interfaces. Additionally, I am an advocate for
-              modern development practices, serving as an AI Lead to train teams
-              on prompt engineering and AI-assisted workflows to accelerate
-              delivery.
+              Sure, I write clean code, but I also know how to lead a squad. I
+              have hands-on experience guiding teams of about 10 developers ,
+              making sure task allocation, code reviews, and sprint deliveries
+              go off without a hitch. I act as the friendly translator between
+              design and development, collaborating closely with clients and UX
+              teams to turn beautiful Figma concepts into pixel-perfect reality.
+              I’m also a big champion of working smarter. As an AI Lead, I train
+              my teams on prompt engineering and AI-assisted workflows to
+              supercharge our development and get products out the door faster.
             </p>
 
             <a
@@ -121,8 +119,9 @@ export default function Home() {
                 height: 120,
                 width: 120,
                 margin: "0 auto",
-                borderRadius: 12,
-                background: "linear-gradient(135deg,#4f46e5,#7c3aed)",
+                borderRadius: "50%",
+                background: "transparent",
+                border: "2px solid white",
                 overflow: "hidden",
                 display: "flex",
                 alignItems: "center",
@@ -130,15 +129,17 @@ export default function Home() {
               }}
             >
               <img
-                src="/picture.jpeg"
+                src="/Picture.png"
                 alt="Arghya"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "fill",
+                  borderRadius: "50%",
+                }}
               />
             </div>
             <h3 style={{ marginTop: 12, color: "white" }}>Arghya Dasgupta</h3>
-            <p style={{ color: "var(--muted)", marginTop: 6 }}>
-              Frontend Developer
-            </p>
 
             <div style={{ marginTop: 12 }}>
               <object
