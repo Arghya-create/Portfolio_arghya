@@ -19,7 +19,7 @@ const PROJECTS = [
 
   {
     title: "RXO+",
-    duration: "April 2025 – Present",
+    duration: "April 2025 – Decemeber 2025",
     about:
       "Modernization initiative migrating a legacy enterprise application from ASP.NET to Angular and TypeScript, using generative AI tools to accelerate code conversion and development.",
     responsibilities:
